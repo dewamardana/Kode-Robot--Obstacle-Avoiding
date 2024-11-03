@@ -68,15 +68,15 @@ void loop() {
   }
 }
 
-int jarak(int A, int B) {
+int jarak() {
   long duration;
   int distance;
-  digitalWrite(A, LOW);
+  digitalWrite(TRG, LOW);
   delayMicroseconds(2);
-  digitalWrite(A, HIGH);
+  digitalWrite(TRG, HIGH);
   delayMicroseconds(10);
-  digitalWrite(A, LOW);
-  duration = pulseIn(B, HIGH);       // Mengukur durasi echo
+  digitalWrite(TRG, LOW);
+  duration = pulseIn(ECH, HIGH);       // Mengukur durasi echo
   distance = (duration * 0.0343) / 2;  // Menghitung jarak berdasarkan durasi
   Serial.print("Distance sensor : ");
   Serial.println(distance);
